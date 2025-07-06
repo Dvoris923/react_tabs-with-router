@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Navigate } from 'react-router-dom';
+import { Route, Navigate, Routes } from 'react-router-dom';
 
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -13,8 +13,8 @@ export const App = () => {
     <>
       <div className="section">
         <div className="container">
-          <Router>
-            <Navbar />
+          <Navbar />
+          <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path="*" element={<PageNotFound />} />
@@ -22,8 +22,7 @@ export const App = () => {
               <Route index element={<Tabs />} />
               <Route path=":tabId" element={<Tabs />} />
             </Route>
-          </Router>
-
+          </Routes>
         </div>
       </div>
     </>
