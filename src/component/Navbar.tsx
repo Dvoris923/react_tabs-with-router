@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 export const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  const isTabsPage = location.pathname.startsWith('/tabs');
+  const isTabs = location.pathname.startsWith('/tabs');
 
   return (
     <nav
@@ -22,7 +22,7 @@ export const Navbar = () => {
         <div className="navbar-brand">
           <Link
             to="/tabs"
-            className={`navbar-item ${isTabsPage ? 'is-active' : ''}`}
+            className={`navbar-item ${isTabs ? 'is-active' : ''}`}
           >
             Tabs
           </Link>
