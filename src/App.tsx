@@ -11,9 +11,9 @@ import { Tabs } from './component/Tab';
 export const App = () => {
   return (
     <>
+      <Navbar />
       <div className="section">
         <div className="container">
-          <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<Navigate to="/" />} />
